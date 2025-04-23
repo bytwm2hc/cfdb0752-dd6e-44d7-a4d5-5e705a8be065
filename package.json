@@ -18,7 +18,8 @@
 		"@ffmpeg/ffmpeg": "*",
 		"@ffmpeg/util": "*",
 		"@playwright/test": "^1.41.2",
-		"@sveltejs/adapter-auto": "^3.1.1",
+		"@sveltejs/adapter-auto": "^6.0.0",
+		"@sveltejs/adapter-cloudflare": "^7.0.1",
 		"@sveltejs/kit": "^2.5.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.2",
 		"@tsconfig/node18": "^18.2.2",
@@ -37,5 +38,6 @@
 		"vite": "^5.1.1",
 		"vitest": "^1.2.2"
 	},
-	"type": "module"
+	"type": "module",
+	"packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
