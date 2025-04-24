@@ -6,8 +6,13 @@
 
 	let videoEl: HTMLVideoElement;
 
+<<<<<<< HEAD
 	const baseURL = 'https://unpkg.com/@ffmpeg/core@0.12.9/dist/esm';
 	const videoURL = '//cdn.mecx.dev/input.tak';
+=======
+	const baseURL = '/dist/esm';
+	const videoURL = '/input.tak';
+>>>>>>> 744a3b0 (2025042502)
 
 	let message = 'Click Start to Transcode';
 
