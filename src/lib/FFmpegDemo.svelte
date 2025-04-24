@@ -8,7 +8,7 @@
 	let audioEl: HTMLAudioElement;
 
 	const baseURL = '/dist/esm';
-	const audioURL = '/input.tak';
+	const audioURL = '//cdn.mecx.dev/input.tak';
 
 	let message = 'Click Start to Transcode';
 
