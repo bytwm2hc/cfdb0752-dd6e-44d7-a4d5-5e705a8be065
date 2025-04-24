@@ -43,7 +43,6 @@ declare module '$env/static/private' {
 	export const LOCALAPPDATA: string;
 	export const LOGONSERVER: string;
 	export const NODE: string;
-	export const NODE_ENV: string;
 	export const npm_config_argv: string;
 	export const npm_config_bin_links: string;
 	export const npm_config_engine_strict: string;
@@ -66,6 +65,7 @@ declare module '$env/static/private' {
 	export const npm_node_execpath: string;
 	export const npm_package_dependencies__ffmpeg_ffmpeg: string;
 	export const npm_package_dependencies__ffmpeg_util: string;
+	export const npm_package_dependencies__sveltejs_adapter_cloudflare: string;
 	export const npm_package_description: string;
 	export const npm_package_devDependencies_svelte: string;
 	export const npm_package_devDependencies_svelte_check: string;
@@ -115,7 +115,6 @@ declare module '$env/static/private' {
 	export const WSLENV: string;
 	export const WT_PROFILE_ID: string;
 	export const WT_SESSION: string;
-	export const YARN_WRAP_OUTPUT: string;
 }
 
 /**
@@ -164,7 +163,6 @@ declare module '$env/dynamic/private' {
 		LOCALAPPDATA: string;
 		LOGONSERVER: string;
 		NODE: string;
-		NODE_ENV: string;
 		npm_config_argv: string;
 		npm_config_bin_links: string;
 		npm_config_engine_strict: string;
@@ -187,6 +185,7 @@ declare module '$env/dynamic/private' {
 		npm_node_execpath: string;
 		npm_package_dependencies__ffmpeg_ffmpeg: string;
 		npm_package_dependencies__ffmpeg_util: string;
+		npm_package_dependencies__sveltejs_adapter_cloudflare: string;
 		npm_package_description: string;
 		npm_package_devDependencies_svelte: string;
 		npm_package_devDependencies_svelte_check: string;
@@ -236,7 +235,6 @@ declare module '$env/dynamic/private' {
 		WSLENV: string;
 		WT_PROFILE_ID: string;
 		WT_SESSION: string;
-		YARN_WRAP_OUTPUT: string;
 		[key: `PUBLIC_${string}`]: undefined;
 		[key: `${string}`]: string | undefined;
 	}
