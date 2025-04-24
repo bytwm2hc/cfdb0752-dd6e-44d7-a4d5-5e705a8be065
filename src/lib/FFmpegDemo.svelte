@@ -1,18 +1,14 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { FFmpeg } from '@ffmpeg/ffmpeg';
 	// @ts-ignore
 	import type { LogEvent } from '@ffmpeg/ffmpeg/dist/esm/types';
 	import { fetchFile, toBlobURL } from '@ffmpeg/util';
 
-	let videoEl: HTMLVideoElement;
+	let audioEl: HTMLAudioElement;
 
-<<<<<<< HEAD
-	const baseURL = 'https://unpkg.com/@ffmpeg/core@0.12.9/dist/esm';
-	const videoURL = '//cdn.mecx.dev/input.tak';
-=======
 	const baseURL = '/dist/esm';
-	const videoURL = '/input.tak';
->>>>>>> 744a3b0 (2025042502)
+	const audioURL = '/input.tak';
 
 	let message = 'Click Start to Transcode';
 
@@ -26,24 +22,28 @@
 		await ffmpeg.load({
 			coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, 'text/javascript'),
 			wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, 'application/wasm'),
-			//workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, 'text/javascript')
+			workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, 'text/javascript')
 		});
 		message = 'Start transcoding';
-		await ffmpeg.writeFile('input.tak', await fetchFile(videoURL));
+		await ffmpeg.writeFile('input.tak', await fetchFile(audioURL));
 		await ffmpeg.exec(['-i', 'input.tak', 'output.wav']);
 		message = 'Complete transcoding';
 		const data = await ffmpeg.readFile('output.wav');
 		console.log('done');
-		videoEl.src = URL.createObjectURL(
+		audioEl.src = URL.createObjectURL(
 			new Blob([(data as Uint8Array).buffer], { type: 'audio/wave' })
 		);
 	}
+
+	onMount(() => {
+		transcode();
+	});
 </script>
 
 <div>
 	<!-- svelte-ignore a11y-media-has-caption -->
-	<audio bind:this={videoEl} controls />
+	<audio controls loop bind:this={audioEl}></audio>
 	<br />
-	<button on:click={transcode}>Start</button>
+	<button on:click={transcode}>Transcode</button>
 	<p>{message}</p>
 </div>

@@ -1,6 +1,0 @@
-# Top-level configuration
-name = "cfdb0752-dd6e-44d7-a4d5-5e705a8be065"
-main = "src/app.d.ts"
-compatibility_date = "2025-04-23"
-[browser]
-binding = "simulatedBrowser"
