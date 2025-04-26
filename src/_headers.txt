@@ -1,0 +1,5 @@
+/
+  Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Opener-Policy: same-origin
+/src/ffmpeg/dist/esm/worker.js
+  Cross-Origin-Embedder-Policy: require-corp

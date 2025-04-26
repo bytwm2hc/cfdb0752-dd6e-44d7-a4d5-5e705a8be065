@@ -1,21 +1,6 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
-/** @type {import('vite').Plugin} */
-const viteServerConfig = () => ({
-    name: 'add-headers',
-    configureServer: (server) => {
-        server.middlewares.use((req, res, next) => {
-            res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
-            res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
-            next();
-        });
-    }
-});
-
 export default defineConfig({
-	optimizeDeps: {
-		exclude: ['@ffmpeg/ffmpeg']
-	},
-	plugins: [sveltekit(), viteServerConfig()]
+	plugins: [sveltekit()]
 });
