@@ -1,2 +1,2 @@
-/src/ffmpeg/dist/esm/worker.js
+/_app/immutable/workers/*
   Cross-Origin-Embedder-Policy: require-corp
