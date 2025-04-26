@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { FFmpeg } from '@ffmpeg/ffmpeg';
+	import { FFmpeg } from '../ffmpeg';
 	// @ts-ignore
 	import type { LogEvent } from '@ffmpeg/ffmpeg/dist/esm/types';
 	import { fetchFile, toBlobURL } from '@ffmpeg/util';
 
 	let audioEl: HTMLAudioElement;
 
-	const baseURL = '/dist/esm';
+	const baseURL = '/core-mt/dist/esm';
 	const audioURL = '/audio.tak';
 
 	let message = 'Click Start to Transcode';
