@@ -8,7 +8,7 @@
 	let audioEl: HTMLAudioElement;
 
 	const baseURL = '/dist/esm';
-	const audioURL = '/Fantastic Baby - BIGBANG.tak';
+	const audioURL = '/audio.tak';
 
 	let message = 'Click Start to Transcode';
 
