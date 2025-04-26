@@ -20,9 +20,9 @@
 			console.log(message);
 		});
 		await ffmpeg.load({
-			coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, 'text/javascript'),
+			coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, 'application/javascript'),
 			wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, 'application/wasm'),
-			workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, 'text/javascript')
+			workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, 'application/javascript')
 		});
 		message = 'Start transcoding';
 		await ffmpeg.writeFile('input.tak', await fetchFile(audioURL));
@@ -33,6 +33,7 @@
 		audioEl.src = URL.createObjectURL(
 			new Blob([(data as Uint8Array).buffer], { type: 'audio/wave' })
 		);
+		await audioEl.play();
 	}
 
 	onMount(() => {
